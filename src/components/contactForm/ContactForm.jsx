@@ -1,5 +1,6 @@
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "./ContactForm.module.css"
 
 const ContactForm = ({ onSubmit }) => {
   return (
@@ -21,7 +22,7 @@ const ContactForm = ({ onSubmit }) => {
         resetForm();
       }}
     >
-      <Form>
+      <Form className={styles.contactFormStyle}>
         <label htmlFor="name">Name</label>
         <Field type="text" id="name" name="name" />
         <ErrorMessage name="name" />
