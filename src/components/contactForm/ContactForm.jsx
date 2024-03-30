@@ -1,6 +1,6 @@
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import styles from "./ContactForm.module.css"
+import styles from "./ContactForm.module.css";
 
 const ContactForm = ({ onSubmit }) => {
   return (
@@ -12,7 +12,7 @@ const ContactForm = ({ onSubmit }) => {
           .max(50, "Must be 50 characters or less")
           .required("Required"),
         number: Yup.string()
-        .matches(/^[0-9]+$/, "Must be only digits")
+          .matches(/^[0-9]+$/, "Must be only digits")
           .min(3, "Must be at least 3 characters")
           .max(50, "Must be 50 characters or less")
           .required("Required"),
@@ -28,7 +28,13 @@ const ContactForm = ({ onSubmit }) => {
         <ErrorMessage name="name" />
 
         <label htmlFor="number">Number</label>
-        <Field type="text" id="number" name="number" pattern="[0-9]*" placeholder="Enter number..." />
+        <Field
+          type="text"
+          id="number"
+          name="number"
+          pattern="[0-9]*"
+          placeholder="Enter number..."
+        />
         <ErrorMessage name="number" />
 
         <button type="submit">Add Contact</button>
